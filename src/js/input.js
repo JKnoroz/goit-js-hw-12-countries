@@ -1,5 +1,6 @@
 import _debounce from 'lodash.debounce';
 import countryCardTpl from '../partials/country-card.hbs';
+import countriesListTpl from '../partials/countries-list.hbs';
 import API from '../js/fetchCountries';
 
 const input = document.querySelector('.country-input');
@@ -15,6 +16,15 @@ function onSearch() {
 function renderCountryCard(country) {
   const markup = countryCardTpl(country);
   cardContainer.innerHTML = markup;
+}
+
+function renderCountriesList(countries) {
+  const markup = countriesListTpl(countries);
+  cardContainer.innerHTML = markup;
+}
+
+function clearInput() {
+  cardContainer.innerHTML = '';
 }
 
 function onFetchError(error) {
