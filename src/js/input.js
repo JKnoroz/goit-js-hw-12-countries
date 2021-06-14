@@ -2,6 +2,7 @@ import _debounce from 'lodash.debounce';
 import countryCardTpl from '../partials/country-card.hbs';
 import countriesListTpl from '../partials/countries-list.hbs';
 import API from '../js/fetchCountries';
+import onSuccess from '..js/messages';
 
 const input = document.querySelector('.country-input');
 const cardContainer = document.querySelector('.js-country');
@@ -22,6 +23,7 @@ function onSearch() {
         renderCountriesList(country);
       } else {
         renderCountryCard(country);
+        onSuccess();
       }
     })
     .catch(onFetchError);
