@@ -24,6 +24,7 @@ function onSearch() {
         renderCountriesList(country);
       } else {
         renderCountryCard(country);
+        onSuccess();
       }
     })
     .catch(console.log('WTF'));

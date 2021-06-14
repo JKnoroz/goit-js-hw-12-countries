@@ -23,4 +23,4 @@ const myError = error({
   autoOpen: false,
 });
 
-export default { mySuccess, myInfo, myNotice, myError };
+export default { myInfo, mySuccess, myNotice, myError };
