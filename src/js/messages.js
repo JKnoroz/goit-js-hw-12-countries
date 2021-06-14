@@ -1,20 +1,26 @@
-import { alert, defaultModules } from 'node_modules/@pnotify/core/dist/PNotify.js';
-import * as PNotifyMobile from 'node_modules/@pnotify/mobile/dist/PNotifyMobile.js';
+import { alert, defaultModules } from '@pnotify/core/dist/PNotify.js';
 
-defaultModules.set(PNotifyMobile, {});
-
-alert({
-  text: 'Notice me, senpai!',
-});
-
-import { alert, notice, info, success, error } from '@pnotify/core';
+import { notice, info, success, error } from '@pnotify/core';
 
 const mySuccess = success({
-  text: "I'm a success message.",
+  text: 'WOW! You found the country',
+  autoOpen: false,
+});
+
+const myNotice = notice({
+  text: 'Put in some more letters',
+  autoOpen: false,
 });
 
 const myInfo = info({
-  text: "I'm an info message.",
+  text: 'Too many matches found. Please enter a more specific query!',
+  autoOpen: false,
 });
 
-export default { mySuccess };
+const myError = error({
+  title: 'Oh No!',
+  text: 'Something terrible happened.',
+  autoOpen: false,
+});
+
+export default { mySuccess, myInfo, myNotice, myError };

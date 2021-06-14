@@ -2,7 +2,7 @@ import _debounce from 'lodash.debounce';
 import countryCardTpl from '../partials/country-card.hbs';
 import countriesListTpl from '../partials/countries-list.hbs';
 import API from '../js/fetchCountries';
-import onSuccess from '..js/messages';
+import notification from '../js/messages';
 
 const input = document.querySelector('.country-input');
 const cardContainer = document.querySelector('.js-country');
@@ -11,6 +11,7 @@ input.addEventListener('input', _debounce(onSearch, 500));
 
 function onSearch() {
   clearInput();
+
   const searchQuery = input.value;
   if (!searchQuery) {
     return;
@@ -23,10 +24,9 @@ function onSearch() {
         renderCountriesList(country);
       } else {
         renderCountryCard(country);
-        onSuccess();
       }
     })
-    .catch(onFetchError);
+    .catch(console.log('WTF'));
 }
 
 function renderCountryCard(country) {
