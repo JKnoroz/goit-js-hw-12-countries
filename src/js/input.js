@@ -20,7 +20,6 @@ function onSearch() {
     .then(data => {
       if (data.length > 10) {
         notification.tooMany();
-        console.log(data.length);
       } else if (data.length > 1) {
         renderCountriesList(data);
         notification.moreLetters();

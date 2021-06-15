@@ -9,7 +9,8 @@ import { notice, info, success, error, defaultStack } from '@pnotify/core';
 function onSuccess() {
   defaultStack.close();
   success({
-    text: 'WOW! You found the country',
+    title: 'WOW!',
+    text: 'You found the country',
     delay: 1000,
   });
 }
@@ -33,8 +34,9 @@ function tooMany() {
 function notFound() {
   defaultStack.close();
   error({
-    title: 'Ups!',
+    title: 'Ooops!',
     text: 'No such country',
+    delay: 2000,
   });
 }
 
