@@ -32,7 +32,7 @@ function onSearch() {
         notification.notFound();
       }
     })
-    .catch(notification.myError());
+    .catch(notification.myError);
 }
 
 function renderCountryCard(country) {
